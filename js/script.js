@@ -1,4 +1,6 @@
-let preQuestions = [
+let preQuestions;
+/*
+ [
   {
     category: "Entertainment: Music",
     type: "multiple",
@@ -203,6 +205,14 @@ let preQuestions = [
     answers: ["Hard Drive", "Processor", "Power Supply", "Video Card"]
   }
 ];
+*/
+
+fetch("https://quiztai.herokuapp.com/api/quiz")
+  .then(resp => resp.json())
+  .then(resp => {
+    preQuestions = resp;
+    setQuestion(index);
+  });
 
 let next = document.querySelector(".next");
 let previous = document.querySelector(".previous");
@@ -223,7 +233,6 @@ let points = 0;
 let currentAnswer = {};
 let answeredQuestions = [];
 
-setQuestion(index);
 activateAnswers();
 
 // w celu testowania
