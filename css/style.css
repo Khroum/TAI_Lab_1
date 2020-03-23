@@ -11,3 +11,14 @@ li {
   flex-direction: row;
   justify-content: center;
 }
+
+.scroll {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  display: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
